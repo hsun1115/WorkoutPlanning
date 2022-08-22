@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Workout List</title>
+<!--    <link th:rel="stylesheet" th:href="@{webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>-->
+<!--    <link th:rel="stylesheet" th:href="@{webjars/font-awesome/5.11.2/css/all.css} "/>-->
+</head>
+<body>
+<div>
+    <table style="border: solid 1px black;">
+        <thead>
+        <tr>
+            <th style="font-size:35px">Strength</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="employee: ${lists}">
+            <td><input id="${employee}" type="checkbox" th:name="${employee}" th:value="${employee}"/>
+                <label style="font-size:35px" for="${employee}" th:text="${employee}"></label></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div>
+    <table style="border: solid 1px black;">
+        <thead>
+        <tr>
+            <th style="font-size:35px">Cardio</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="cardio: ${cardios}">
+            <td><input id="${cardio}" type="checkbox" th:name="${cardio}" th:value="${cardio}"/>
+                <label style="font-size:35px" for="${cardio}" th:text="${cardio}"></label></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<!--<p th:text="'Warm Up:'+${warmup}"></p>-->
+<!--<p th:text="'Strength:'+${strength}"></p>-->
+
+<!--<script th:src="@{/webjars/jquery/jquery.min.js}"></script>-->
+<!--<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>-->
+<!--<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>-->
+</body>
+</html>
