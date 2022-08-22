@@ -40,12 +40,20 @@ public class ActionServiceImpl implements ActionService {
         for (Object obj : actions) {
             list.add(String.valueOf(obj));
         }
-//        System.out.println(list);
         return list;
     }
-//
-//    @Override
-//    public List<Action> findByCategoryId(int id) {
-//        return null;
-//    }
+
+    @Override
+    public List<String> findByCategoryId(int id) {
+        QueryWrapper<Action> queryWrapper = new QueryWrapper<>();
+        String strId = String.valueOf(id);
+        queryWrapper.eq("category_id", strId);
+        List<Action> actions = actionDao.selectList(queryWrapper);
+        List<String> names = new ArrayList<>();
+        for (Action action : actions) {
+            names.add(action.getName());
+        }
+
+        return names;
+    }
 }

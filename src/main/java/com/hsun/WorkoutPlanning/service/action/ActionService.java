@@ -16,5 +16,5 @@ public interface ActionService {
 
     public List<String> findAll();
 
-    //List<Action> findByCategoryId(int id);
+    List<String> findByCategoryId(int id);
 }
